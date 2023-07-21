@@ -55,10 +55,10 @@ public class RobotContainer {
     }));
 
     double leftX = manipulatorController.getLeftX();
-    double rightX = manipulatorController.getRightX();
+    double leftY = manipulatorController.getLeftY();
 
-    if (Math.abs(rightX) > DEADBAND) {
-      Commands.runOnce(() -> RollerBar.runMotor(leftX * RollerBarSubsystem.INTAKE_SPEED));
+    if (Math.abs(leftY) > DEADBAND) {
+      Commands.runOnce(() -> RollerBar.runMotor(leftY * RollerBarSubsystem.INTAKE_SPEED));
     }
   }
 
